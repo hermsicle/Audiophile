@@ -1,0 +1,43 @@
+.button-1 {
+  height: 48px;
+  width: 160px;
+  background: $Primary;
+  color: $White;
+  text-transform: uppercase;
+  border: none;
+  font-weight: 600;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    background: $Primary-light;
+  }
+}
+.button-2 {
+  height: 48px;
+  width: 160px;
+  background: none;
+  color: $Black;
+  text-transform: uppercase;
+  border: $Border;
+  font-weight: 600;
+
+  transition: all 250ms ease-in-out;
+  &:hover {
+    background: $Secondary;
+    color: $Secondary-light;
+  }
+}
+.button-3 {
+  height: 48px;
+  width: 160px;
+  background: none;
+  color: $Secondary;
+  text-transform: uppercase;
+  // border: $Border;
+  border: none;
+  font-weight: 600;
+
+  transition: all 250ms ease-in-out;
+  &:hover {
+    color: $Primary;
+  }
+}

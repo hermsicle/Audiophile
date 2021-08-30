@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Checkout, Home, Earphones, Headphones, Speakers } from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <header>
+          <Link to="/">
+            <h3> Home</h3>
+          </Link>
+          <Link to="/speakers">
+            <h3> Speakers</h3>
+          </Link>
+          <Link to="/earphones">
+            <h3> Earphones</h3>
+          </Link>
+          <Link to="/headphones">
+            <h3> Headphones</h3>
+          </Link>
+          <Link to="/checkout">
+            <h3> Checkout</h3>
+          </Link>
+        </header>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/earphones" component={Earphones} />
+          <Route exact path="/headphones" component={Headphones} />
+          <Route exact path="/speakers" component={Speakers} />
+          <Route exact path="/checkout" component={Checkout} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

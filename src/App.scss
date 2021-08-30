@@ -1,0 +1,15 @@
+// import our Systems sass file here
+@import "sass/System.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*button {
+  cursor: pointer;
+}
+
+.App {
+  text-align: center;
+}
