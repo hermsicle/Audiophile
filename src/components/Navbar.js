@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,25 @@ const Navbar = () => {
         {/*  Logo  */}
         <div className="logo-container">
           <img src="./assets/shared/desktop/logo.svg" alt="audiophile" />
+        </div>
+
+        {/* Desktop NavLinks */}
+        <div className="desktop-links">
+          <Link to="/">
+            <h5> Home</h5>
+          </Link>
+          <Link to="/speakers">
+            <h5> Speakers</h5>
+          </Link>
+          <Link to="/earphones">
+            <h5> Earphones</h5>
+          </Link>
+          <Link to="/headphones">
+            <h5> Headphones</h5>
+          </Link>
+          <Link to="/checkout">
+            <h5> Checkout</h5>
+          </Link>
         </div>
 
         {/*  Cart  */}

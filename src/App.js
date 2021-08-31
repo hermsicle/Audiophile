@@ -7,23 +7,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <header>
-          <Link to="/">
-            <h3> Home</h3>
-          </Link>
-          <Link to="/speakers">
-            <h3> Speakers</h3>
-          </Link>
-          <Link to="/earphones">
-            <h3> Earphones</h3>
-          </Link>
-          <Link to="/headphones">
-            <h3> Headphones</h3>
-          </Link>
-          <Link to="/checkout">
-            <h3> Checkout</h3>
-          </Link>
-        </header>
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/earphones" component={Earphones} />
@@ -37,3 +21,8 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <button className="button-2">See Product</button>
+<button className="button-3">Shop</button> */
+}

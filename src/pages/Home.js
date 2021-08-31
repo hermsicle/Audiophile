@@ -1,13 +1,11 @@
 import React from "react";
+import { Landing } from "../components";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <button className="button-1">See Product</button>
-      <button className="button-2">See Product</button>
-      <button className="button-3">Shop</button>
-    </div>
+    <>
+      <Landing />
+    </>
   );
 };
 
