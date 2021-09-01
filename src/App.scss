@@ -10,21 +10,33 @@
   cursor: pointer;
 }
 
+body {
+  background: $White;
+}
+
 // Break points: 375px / 768px / 1024px
 
 .navbar-container {
-  background: $Black;
+  background: $Secondary;
   padding: 30px 25px;
-  border-bottom: 1px solid #979797;
   .navbar-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // width: 328px;
+    position: relative;
     width: 90%;
     max-width: $Max-Width;
     margin: 0 auto;
     // border: 1px solid white;
+    // border-bottom: 1px solid #979797;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      height: 1px;
+      background: #979797;
+    }
     .item {
       img {
         height: 25px;
@@ -83,6 +95,8 @@
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
+  display: grid;
+  place-content: center;
 
   .landing-container {
     // border: $Border2;
@@ -115,7 +129,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 800px;
+    height: 100vh;
   }
 
   @media (min-width: 768px) {
@@ -133,6 +147,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100vh;
+    display: inline-block;
+
     .landing-container {
       width: 90%;
       height: 100%;
@@ -150,6 +167,465 @@
         button {
           margin-top: 50px;
         }
+      }
+    }
+  }
+}
+
+// ItemcContainerHome
+.items-container {
+  // border: $Border;
+  max-width: $Max-Width;
+  width: 90%;
+  margin: 0 auto;
+  .item {
+    width: 90%;
+    margin: 0 auto;
+    height: 165px;
+    background: $Neutral;
+    margin: 75px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 90px;
+    border-radius: $Border-radius;
+    .item-image {
+      position: absolute;
+      top: -50px;
+      filter: drop-shadow(5px 5px 5px gray);
+    }
+    .shop {
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0px;
+    .item {
+      width: 30%;
+      height: 220px;
+    }
+  }
+}
+
+// zx9 Container
+.zx9-home-container {
+  width: 90%;
+  max-width: $Max-Width;
+  margin: 0 auto;
+  text-align: center;
+  padding: 45px;
+  background: $Primary;
+  color: $White;
+  border-radius: $Border-radius;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .zx9-image-container {
+    border: 1px solid $Light;
+    border-radius: 100%;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    &::after {
+      content: "";
+      width: 110%;
+      height: 110%;
+      border-radius: 100%;
+      border: 1px solid $Light;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -5%;
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      width: 200%;
+      height: 200%;
+      border-radius: 100%;
+      border: 1px solid $Light;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -50%;
+      z-index: 1;
+    }
+    .zx9-image {
+      height: 250px;
+      height: 250px;
+      margin: 50px auto;
+    }
+  }
+  .title {
+    width: 10ch;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  .content {
+    margin: 35px auto;
+    color: $Neutral;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+  }
+  .product {
+    background: $Black;
+    color: $White;
+    transition: $Transition;
+    border: none;
+    &:hover {
+      background: $White;
+      color: $Black;
+      border: none;
+    }
+  }
+
+  @media (min-width: 950px) {
+    padding-bottom: 0px;
+    max-height: 500px;
+    .flex-row {
+      display: flex;
+      flex-direction: row-reverse;
+      // border: $Border;
+      position: relative;
+
+      .zx9-image-container {
+        width: 400px;
+        position: absolute;
+        // left: -50px;
+        bottom: -50px;
+        left: 0;
+        .zx9-image {
+          // border: $Border;
+          width: 280px;
+          height: auto;
+        }
+      }
+
+      .zx9-info {
+        // border: $Border;
+        width: 60%;
+        text-align: left;
+        z-index: 40;
+        padding: 100px;
+        .title {
+          width: 100%;
+          width: 20%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// zx7 Speakers Container
+.zx7-container {
+  width: 90%;
+  max-width: $Max-Width;
+  margin: 50px auto;
+  // border: $Border;
+  border-radius: $Border-radius;
+  background: url("./../src/assets/home/tablet/image-speaker-zx7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
+  .left-container {
+    // border: $Border;
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px 0px;
+    h1,
+    button {
+      margin: 25px;
+    }
+  }
+
+  @media (min-width: $Tablet) {
+    background: url("./../src/assets/home/desktop/image-speaker-zx7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .left-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 100px;
+    }
+  }
+}
+
+// Yx1Container
+.yx1-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: $Max-Width;
+  margin: 0 auto 50px auto;
+  // border: $Border;
+  .top-container {
+    margin-bottom: 50px;
+    height: 200px;
+    width: 100%;
+    background: url("./../src/assets/home/mobile/image-earphones-yx1.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: $Border-radius;
+  }
+  .bottom-container {
+    // border: $Border;
+    height: 200px;
+    background: $Secondary-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    border-radius: $Border-radius;
+    h1 {
+      margin-bottom: 25px;
+    }
+  }
+
+  // Tablet
+  @media (min-width: $Tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    .top-container,
+    .bottom-container {
+      width: 48%;
+      height: 350px;
+    }
+  }
+}
+
+// About container
+.about-container {
+  width: 90%;
+  max-width: $Max-Width;
+  margin: 50px auto 150px auto;
+  // border: $Border;
+  display: flex;
+  flex-direction: column;
+  .top-container {
+    background: url("./../src/assets/shared/mobile/image-best-gear.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    border-radius: $Border-radius;
+  }
+  .bottom-container {
+    // border: $Border;
+    text-align: center;
+    h1 {
+      margin: 25px auto;
+      span {
+        color: $Primary;
+      }
+    }
+    p {
+      color: $Secondary;
+      font-size: 16px;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+  }
+  @media (min-width: $Tablet) {
+    .top-container {
+      background: url("./../src/assets/shared/tablet/image-best-gear.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .bottom-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: $Desktop) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    .top-container {
+      width: 48%;
+    }
+    .bottom-container {
+      text-align: left;
+      width: 49%;
+      padding-right: 100px;
+    }
+  }
+}
+
+// Footer Container
+.footer-container {
+  background: $Black;
+  padding: 50px;
+  .footer-inner-wrapper {
+    max-width: $Max-Width;
+    margin: 0 auto;
+  }
+  .footer-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: $Border2;
+    .logo {
+      background: url("./../src/assets/shared/desktop/logo.svg");
+      background-repeat: no-repeat;
+      // border: $Border2;
+      width: 200px;
+      height: 50px;
+      background-position: center;
+      margin-bottom: 50px;
+    }
+    .footer-nav-container {
+      // border: $Border2;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: $White;
+        transition: $Transition;
+        h5 {
+          margin: 16px auto;
+        }
+        &:hover {
+          color: $Primary;
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    padding: 50px 25px;
+    text-align: center;
+    // border: $Border2;
+    p {
+      color: $Light;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+    .copyright {
+      margin: 50px auto;
+    }
+    .social-link {
+      // border: $Border2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .facebook {
+        background: url("./../src/assets/shared/desktop/icon-facebook.svg");
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: $Transition;
+      }
+      .facebook.active {
+        background: url("./../src/assets/shared/desktop/icon-facebookactive.svg");
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: $Transition;
+      }
+      .twitter {
+        background: url("./../src/assets/shared/desktop/icon-twitter.svg");
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: $Transition;
+      }
+      .twitter.active {
+        background: url("./../src/assets/shared/desktop/icon-twitteractive.svg");
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: $Transition;
+      }
+      .instagram {
+        background: url("./../src/assets/shared/desktop/icon-instagram.svg");
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+      .instagram.active {
+        background: url("./../src/assets/shared/desktop/icon-instagramactive.svg");
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: $Transition;
+      }
+    }
+  }
+
+  // Tablet
+  @media (min-width: 768px) {
+    .footer-upper {
+      // border: $Border2;
+      text-align: left;
+      align-items: flex-start;
+      .footer-nav-container {
+        display: flex;
+        a {
+          margin-right: 25px;
+        }
+      }
+    }
+    .footer-bottom {
+      text-align: left;
+      padding-left: 0px;
+      .flex-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // border: $Border2;
+        margin-top: 50px;
+        .copyright {
+          margin: 0px;
+        }
+      }
+    }
+  }
+
+  // Desktop
+  @media (min-width: $Desktop) {
+    .footer-upper {
+      flex-direction: row;
+      justify-content: space-between;
+      .logo {
+        height: 60px;
+      }
+    }
+    .footer-bottom {
+      position: relative;
+      .footer-content {
+        width: 50%;
+      }
+      .social-link {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }
