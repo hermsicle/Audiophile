@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "path": "zx7",
     "imageDesktop": "./assets/product-zx7-speaker/desktop/image-product.jpg",
     "image": "./assets/product-zx7-speaker/tablet/image-category-page-preview.jpg",
     "title": "ZX9 speaker",
@@ -8,6 +9,7 @@
   },
   {
     "id": "2",
+    "path": "zx9",
     "reverse": "true",
     "imageDesktop": "./assets/product-zx9-speaker/desktop/image-product.jpg",
     "image": "./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg",

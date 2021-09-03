@@ -1,6 +1,15 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-const Product = ({ image, imageDesktop, title, description, reverse }) => {
+const Product = ({
+  image,
+  imageDesktop,
+  title,
+  description,
+  reverse,
+  path,
+}) => {
+  const history = useHistory();
   return (
     <div
       className={
@@ -15,7 +24,9 @@ const Product = ({ image, imageDesktop, title, description, reverse }) => {
         <h5 className="subtitle"> new Product </h5>
         <h1 className="title"> {title} </h1>
         <p className="description"> {description} </p>
-        <button className="button-1"> See Product </button>
+        <button className="button-1" onClick={() => history.push(`/${path}`)}>
+          See Product
+        </button>
       </div>
     </div>
   );
