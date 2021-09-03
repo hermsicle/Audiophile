@@ -1,9 +1,20 @@
 import React from "react";
+import { Banner } from "../components";
+import {
+  HeadphoneProducts,
+  ItemsContainer,
+  AboutContainer,
+  FooterContainer,
+} from "../containers";
 
 const Headphones = () => {
   return (
     <>
-      <h1>Headphones page</h1>
+      <Banner title="headphones" />
+      <HeadphoneProducts />
+      <ItemsContainer />
+      <AboutContainer />
+      <FooterContainer />
     </>
   );
 };

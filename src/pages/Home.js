@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <>
       <Landing />
+      {/* ItemsContainer is Reusable throughout App */}
       <ItemsContainer />
       <Zx9Container />
       <Zx7Container />

@@ -1,20 +1,21 @@
 import React from "react";
 import { Item } from "../components";
+import { Link } from "react-router-dom";
 
-const ItemsContainer = () => {
+const ItemsContainer = ({ navbar }) => {
   return (
-    <div className="items-container">
+    <div className={navbar ? "items-container nav" : "items-container"}>
       <Item
         image="./assets/shared/mobile/image-xx99-mark-one-headphones.svg"
-        item="Headphones"
+        item="headphones"
       />
       <Item
         image="./assets/shared/mobile/image-zx9-speaker.svg"
-        item="Speakers"
+        item="speakers"
       />
       <Item
         image="./assets/shared/mobile/image-category-thumbnail-earphones.svg"
-        item="Earphones"
+        item="earphones"
       />
     </div>
   );
