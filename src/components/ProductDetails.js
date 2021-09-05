@@ -13,29 +13,35 @@ function ProductDetails({
     <div className="product-details-container">
       <div className="product-top-container">
         <div className="image">
-          <img src={image} alt="" />
+          <img src={image} alt="" className="image" />
         </div>
         <div className="product-details">
-          <h1> {name} </h1>
-          <p> {description} </p>
-          <h5> {price} </h5>
+          <h5 className="new-product"> New Product </h5>
+          <h1 className="title"> {name} </h1>
+          <p className="description"> {description} </p>
+          <h5 className="price"> $ {price} </h5>
           <div className="add-to-cart-container">
-            <input type="number" placeholder="1" />
+            <div className="cart-counter">
+              <button className="decrement"> - </button>
+              <input className="count" type="text" placeholder="1" />
+              <button className="increment"> + </button>
+            </div>
             <button className="button-1"> Add to cart </button>
           </div>
         </div>
       </div>
       <div className="product-bottom-container">
         <div className="features-container">
-          <p>{features}</p>
-          <p>{features2}</p>
+          <h2 className="title">Features</h2>
+          <p className="feature">{features}</p>
+          <p className="feature">{features2}</p>
         </div>
         <div className="in-the-box">
-          {/* Map out the In the Box Details */}
+          <h2> In the box </h2>
           {inTheBox.map((item, i) => (
-            <div>
-              <p>{item.frequency}</p>
-              <p> {item.title}</p>
+            <div className="box" key={i}>
+              <p className="frequency">{item.frequency}</p>
+              <p className="description"> {item.title}</p>
             </div>
           ))}
         </div>

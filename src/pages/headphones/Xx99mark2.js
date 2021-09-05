@@ -11,7 +11,6 @@ function Xx99mark2(props) {
   return (
     <div>
       <button className="button-3">Go Back</button>
-      <h1> XX99 MARK TWO </h1>
       <ProductDetails
         image={data.imageMobile}
         name={data.title}

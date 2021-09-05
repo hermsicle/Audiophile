@@ -14,6 +14,12 @@ body {
   background: $White;
 }
 
+.new-product {
+  color: $Primary;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+}
+
 // Break points: 375px / 768px / 1024px
 
 .navbar-container {
@@ -721,5 +727,150 @@ body {
   .product-container.reverse {
     display: flex;
     flex-direction: row-reverse;
+  }
+}
+
+// Products-details-container
+.product-details-container {
+  border: $Border;
+  .product-top-container {
+    border: $Border;
+    .image {
+      border: $Border;
+      width: 90%;
+      max-width: $Max-Width;
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+    }
+    .product-details {
+      border: $Border;
+      width: 90%;
+      max-width: $Max-Width;
+      margin: 0 auto;
+      padding: 2rem 0;
+      .title {
+        margin-bottom: 2rem;
+      }
+      .description {
+        letter-spacing: 1px;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      .price {
+        margin: 1rem 0;
+      }
+      .add-to-cart-container {
+        border: $Border;
+        display: flex;
+        .cart-counter {
+          border: $Border;
+          height: 48px;
+          .decrement,
+          .increment,
+          .count {
+            height: 100%;
+            width: 40px;
+            background: $Light;
+            border: none;
+          }
+          .count {
+            // border: $Border;
+            outline: none;
+            text-align: center;
+            &:placeholder-shown {
+              text-align: center;
+            }
+          }
+        }
+        .button-1 {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+  .product-bottom-container {
+    border: $Border;
+    width: 90%;
+    margin: 50px auto;
+    max-width: $Max-Width;
+    .title {
+      margin-bottom: 25px;
+    }
+    .feature {
+      letter-spacing: 1px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+    .in-the-box {
+      border: $Border;
+      .box {
+        display: flex;
+        border: $Border;
+        padding: 1rem 0;
+        .frequency {
+          color: $Primary;
+          font-weight: 800;
+        }
+        .description {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// Gallary Container
+.gallery-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $Max-Width;
+  .gallery-top {
+    border: $Border;
+    width: 100%;
+    img {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: $Border-radius;
+    }
+  }
+  .gallery-bottom {
+    width: 100%;
+    img {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: $Border-radius;
+    }
+  }
+}
+
+// Upsale container
+.upsale-container {
+  border: $Border;
+  text-align: center;
+  margin: 100px auto;
+  width: 90%;
+  max-width: $Max-Width;
+  .itemsToConsider-container {
+    border: $Border;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .item {
+      height: 250px;
+      width: 100%;
+      margin-bottom: 200px;
+      border: $Border;
+
+      img {
+        width: 100%;
+        border-radius: $Border-radius;
+      }
+      h2 {
+        text-align: center;
+        margin: 2rem;
+      }
+    }
   }
 }
