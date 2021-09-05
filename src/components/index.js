@@ -5,3 +5,4 @@ export { default as Banner } from "./Banner";
 export { default as Product } from "./Product";
 export { default as Gallary } from "./Gallary";
 export { default as ProductDetails } from "./ProductDetails";
+export { default as Upsale } from "./Upsale";

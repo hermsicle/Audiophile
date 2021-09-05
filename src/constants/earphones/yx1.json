@@ -1,0 +1,62 @@
+{
+  "imageMobile": "./assets/product-yx1-earphones/desktop/image-product.jpg",
+  "imageTablet": "./assets/product-yx1-earphones/tablet/image-product.jpg",
+  "imageDesktop": "./assets/product-yx1-earphones/desktop/image-product.jpg",
+  "title": "YX1 Wireless Earphones",
+  "description": "  Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+  "price": "599",
+  "features": [
+    {
+      "id": "1",
+      "feature": "Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound."
+    },
+    {
+      "id": "2",
+      "feature": "The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black."
+    }
+  ],
+  "inTheBox": [
+    {
+      "frequency": "2x",
+      "title": "Earphone unit"
+    },
+    {
+      "frequency": "6x",
+      "title": "Multi-size earplugs"
+    },
+    {
+      "frequency": "1x",
+      "title": "User manual"
+    },
+    {
+      "frequency": "1x",
+      "title": "USB-C charging cable"
+    },
+    {
+      "frequency": "1x",
+      "title": "Travel pouch"
+    }
+  ],
+  "gallary": {
+    "image1": "./assets/product-yx1-earphones/desktop/image-gallery-1.jpg",
+    "image2": "./assets/product-yx1-earphones/desktop/image-gallery-2.jpg",
+    "image3": "./assets/product-yx1-earphones/desktop/image-gallery-3.jpg"
+  },
+  "itemsToConsider": [
+    {
+      "item": "ZX9 Speaker",
+      "image": "./assets/product-zx9-speaker/tablet/image-category-page-preview",
+      "path": "zx9"
+    },
+    {
+      "item": "XX99 Mark I",
+      "image": "./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview",
+      "path": "xx99mark1"
+    },
+    {
+      "item": "XX59",
+      "image": "./assets/product-xx59-headphones/tablet/image-category-page-preview",
+      "path": "xx59"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "imageMobile": "./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
+  "imageTablet": "./assets/product-xx99-mark-one-headphones/tablet/image-product.jpg",
+  "imageDesktop": "./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
+  "title": "XX99 Mark I Headphones",
+  "description": "  As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
+  "price": "1750",
+  "features": [
+    {
+      "id": "1",
+      "feature": "As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz."
+    },
+    {
+      "id": "2",
+      "feature": "  From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector."
+    }
+  ],
+  "inTheBox": [
+    {
+      "frequency": "1x",
+      "title": "Headphone unit"
+    },
+    {
+      "frequency": "2x",
+      "title": "Replacement earcups"
+    },
+    {
+      "frequency": "1x",
+      "title": "User manual"
+    },
+    {
+      "frequency": "1x",
+      "title": "3.5mm 5m audio cable"
+    }
+  ],
+  "gallary": {
+    "image1": "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg",
+    "image2": "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg",
+    "image3": "./assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
+  },
+  "itemsToConsider": [
+    {
+      "item": "XX99 Mark II",
+      "image": "./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
+      "path": "xx99mark2"
+    },
+    {
+      "item": "XX59",
+      "image": "./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg",
+      "path": "xx59"
+    },
+    {
+      "item": "ZX9 speaker",
+      "image": "./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg",
+      "path": "zx9"
+    }
+  ]
+}
