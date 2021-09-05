@@ -5,9 +5,9 @@ import {
   FooterContainer,
 } from "../../containers";
 import { ProductDetails, Gallary, Upsale } from "../../components";
-import data from "../../constants/headphones/xx99mark2.json";
+import data from "../../constants/speakers/zx9.json";
 
-function Xx99mark2(props) {
+function Zx9(props) {
   return (
     <div>
       <ProductDetails
@@ -27,7 +27,6 @@ function Xx99mark2(props) {
         image3={data.gallary.image3}
       />
       <Upsale itemsToConsider={data.itemsToConsider} />
-
       <ItemsContainer />
       <AboutContainer />
       <FooterContainer />
@@ -35,4 +34,4 @@ function Xx99mark2(props) {
   );
 }
 
-export default Xx99mark2;
+export default Zx9;

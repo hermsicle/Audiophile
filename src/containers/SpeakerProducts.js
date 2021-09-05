@@ -13,6 +13,7 @@ const SpeakerProducts = () => {
           description={item.description}
           key={item.id}
           reverse={item.reverse}
+          path={item.path}
         />
       ))}
     </div>

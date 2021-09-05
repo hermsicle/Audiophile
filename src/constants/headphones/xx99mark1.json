@@ -42,16 +42,22 @@
     {
       "item": "XX99 Mark II",
       "image": "./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
+      "imageTablet": "./assets/product-xx99-mark-two-headphones/tablet/image-product.jpg",
+      "imageDesktop": "./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
       "path": "xx99mark2"
     },
     {
       "item": "XX59",
       "image": "./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg",
+      "imageTablet": "./assets/product-xx59-headphones/tablet/image-product.jpg",
+      "imageDesktop": "./assets/product-xx59-headphones/desktop/image-product.jpg",
       "path": "xx59"
     },
     {
       "item": "ZX9 speaker",
       "image": "./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg",
+      "imageTablet": "./assets/product-zx9-speaker/tablet/image-product.jpg",
+      "imageDesktop": "./assets/product-zx9-speaker/desktop/image-product.jpg",
       "path": "zx9"
     }
   ]

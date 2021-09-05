@@ -4,15 +4,29 @@ import {
   ItemsContainer,
   FooterContainer,
 } from "../../containers";
+import { ProductDetails, Gallary, Upsale } from "../../components";
+import data from "../../constants/headphones/xx99mark1.json";
 
 function Xx99mark1(props) {
   return (
     <div>
-      <h1> XX99 MARK ONE </h1>
-      {/* Get data from JSON constant file  */}
-      {/* Create Reusable Component For Product For Sale */}
-
-      {/* Create Reusable Component For gallary */}
+      <ProductDetails
+        image={data.imageMobile}
+        imageTablet={data.imageTablet}
+        imageDesktop={data.imageDesktop}
+        name={data.title}
+        description={data.description}
+        price={data.price}
+        features={data.features[0].feature}
+        features2={data.features[1].feature}
+        inTheBox={data.inTheBox}
+      />
+      <Gallary
+        image1={data.gallary.image1}
+        image2={data.gallary.image2}
+        image3={data.gallary.image3}
+      />
+      <Upsale itemsToConsider={data.itemsToConsider} />
       <ItemsContainer />
       <AboutContainer />
       <FooterContainer />

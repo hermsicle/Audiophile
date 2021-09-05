@@ -732,23 +732,28 @@ body {
 
 // Products-details-container
 .product-details-container {
-  border: $Border;
+  // border: $Border;
+  width: 90%;
+  max-width: $Max-Width;
+  margin: 0 auto;
   .product-top-container {
-    border: $Border;
+    // border: $Border;
     .image {
-      border: $Border;
-      width: 90%;
-      max-width: $Max-Width;
-      margin: 0 auto;
-      img {
+      // border: $Border;
+      width: 100%;
+      .image-mobile {
         width: 100%;
+      }
+      .image-tablet {
+        display: none;
+      }
+      .image-desktop {
+        display: none;
       }
     }
     .product-details {
-      border: $Border;
-      width: 90%;
-      max-width: $Max-Width;
-      margin: 0 auto;
+      // border: $Border;
+      width: 100%;
       padding: 2rem 0;
       .title {
         margin-bottom: 2rem;
@@ -762,10 +767,10 @@ body {
         margin: 1rem 0;
       }
       .add-to-cart-container {
-        border: $Border;
+        // border: $Border;
         display: flex;
         .cart-counter {
-          border: $Border;
+          // border: $Border;
           height: 48px;
           .decrement,
           .increment,
@@ -791,10 +796,9 @@ body {
     }
   }
   .product-bottom-container {
-    border: $Border;
-    width: 90%;
+    // border: $Border;
+    width: 100%;
     margin: 50px auto;
-    max-width: $Max-Width;
     .title {
       margin-bottom: 25px;
     }
@@ -804,10 +808,10 @@ body {
       margin-bottom: 25px;
     }
     .in-the-box {
-      border: $Border;
+      // border: $Border;
       .box {
         display: flex;
-        border: $Border;
+        // border: $Border;
         padding: 1rem 0;
         .frequency {
           color: $Primary;
@@ -815,6 +819,68 @@ body {
         }
         .description {
           margin-left: 2rem;
+        }
+      }
+    }
+  }
+  @media (min-width: $Tablet) {
+    .product-top-container {
+      display: flex;
+      .image {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .image-mobile {
+          display: none;
+        }
+        .image-tablet {
+          display: flex;
+          width: 90%;
+          max-width: 400px;
+        }
+      }
+      .product-details {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+    .product-bottom-container {
+      .features-container {
+        margin-bottom: 100px;
+      }
+      .in-the-box {
+        display: flex;
+        // justify-content: space-between;
+        .box-container {
+          margin-left: 100px;
+        }
+      }
+    }
+  }
+  @media (min-width: $Desktop) {
+    .product-top-container {
+      .image {
+        .image-tablet {
+          display: none;
+        }
+        .image-desktop {
+          display: flex;
+          width: 95%;
+        }
+      }
+    }
+    .product-bottom-container {
+      display: flex;
+      .features-container {
+        width: 60%;
+      }
+      .in-the-box {
+        width: 40%;
+        flex-direction: column;
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
         }
       }
     }
@@ -827,11 +893,14 @@ body {
   margin: 0 auto;
   max-width: $Max-Width;
   .gallery-top {
-    border: $Border;
+    // border: $Border;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     img {
       width: 100%;
-      margin: 1rem 0;
+      margin-bottom: 20px;
       border-radius: $Border-radius;
     }
   }
@@ -843,33 +912,99 @@ body {
       border-radius: $Border-radius;
     }
   }
+  @media (min-width: $Tablet) {
+    display: flex;
+    justify-content: space-between;
+    .gallery-top {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      img {
+        margin-bottom: 10px;
+      }
+    }
+    .gallery-bottom {
+      width: 58%;
+      img {
+        margin: 0px;
+      }
+    }
+  }
 }
 
 // Upsale container
 .upsale-container {
-  border: $Border;
+  // border: $Border;
   text-align: center;
   margin: 100px auto;
   width: 90%;
   max-width: $Max-Width;
   .itemsToConsider-container {
-    border: $Border;
+    // border: $Border;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     .item {
-      height: 250px;
       width: 100%;
-      margin-bottom: 200px;
-      border: $Border;
+      margin-bottom: 50px;
+      // border: $Border;
 
-      img {
+      .image-mobile {
         width: 100%;
         border-radius: $Border-radius;
+      }
+      .image-tablet {
+        display: none;
+      }
+      .image-desktop {
+        display: none;
       }
       h2 {
         text-align: center;
         margin: 2rem;
+      }
+    }
+  }
+  @media (min-width: $Tablet) {
+    h1 {
+      margin-bottom: 50px;
+    }
+    .itemsToConsider-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .item {
+        padding-bottom: 40px;
+        position: relative;
+        width: 31%;
+        .image-mobile {
+          display: none;
+        }
+        .image-tablet {
+          width: 100%;
+          display: flex;
+        }
+        .button-1 {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  @media (min-width: $Desktop) {
+    .itemsToConsider-container {
+      .item {
+        .image-desktop {
+          display: flex;
+          width: 100%;
+        }
+        .image-tablet {
+          display: none;
+        }
       }
     }
   }

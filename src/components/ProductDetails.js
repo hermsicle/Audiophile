@@ -2,6 +2,8 @@ import React from "react";
 
 function ProductDetails({
   image,
+  imageTablet,
+  imageDesktop,
   name,
   description,
   price,
@@ -11,9 +13,13 @@ function ProductDetails({
 }) {
   return (
     <div className="product-details-container">
+      <button className="button-3">Go Back</button>
+
       <div className="product-top-container">
         <div className="image">
-          <img src={image} alt="" className="image" />
+          <img src={image} alt="" className="image-mobile" />
+          <img src={imageTablet} alt="" className="image-tablet" />
+          <img src={imageDesktop} alt="" className="image-desktop" />
         </div>
         <div className="product-details">
           <h5 className="new-product"> New Product </h5>
@@ -38,12 +44,14 @@ function ProductDetails({
         </div>
         <div className="in-the-box">
           <h2> In the box </h2>
-          {inTheBox.map((item, i) => (
-            <div className="box" key={i}>
-              <p className="frequency">{item.frequency}</p>
-              <p className="description"> {item.title}</p>
-            </div>
-          ))}
+          <div className="box-container">
+            {inTheBox.map((item, i) => (
+              <div className="box" key={i}>
+                <p className="frequency">{item.frequency}</p>
+                <p className="description"> {item.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
