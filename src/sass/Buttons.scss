@@ -41,3 +41,20 @@
     color: $Primary;
   }
 }
+.button-4 {
+  height: 48px;
+  width: 160px;
+  background: none;
+  color: $Secondary;
+  text-transform: uppercase;
+  border: $Border;
+  text-align: left;
+  border: none;
+  font-weight: 600;
+  margin-bottom: 1rem;
+
+  transition: all 250ms ease-in-out;
+  &:hover {
+    color: $Primary;
+  }
+}

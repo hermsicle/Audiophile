@@ -13,7 +13,7 @@ function ProductDetails({
 }) {
   return (
     <div className="product-details-container">
-      <button className="button-3">Go Back</button>
+      <button className="button-4">Go Back</button>
 
       <div className="product-top-container">
         <div className="image">

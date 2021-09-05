@@ -9,3 +9,4 @@ export { default as SpeakerProducts } from "./SpeakerProducts";
 export { default as EarphoneProducts } from "./EarphoneProducts";
 export { default as Cart } from "./Cart";
 export { default as CheckoutForm } from "./CheckoutForm";
+export { default as Summary } from "./Summary";
