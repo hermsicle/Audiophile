@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 function ProductDetails({
   image,
@@ -11,9 +12,17 @@ function ProductDetails({
   features2,
   inTheBox,
 }) {
+  const history = useHistory();
+
+  const handleBackClick = () => {
+    history.goBack();
+  };
+
   return (
     <div className="product-details-container">
-      <button className="button-4">Go Back</button>
+      <button className="button-4" onClick={handleBackClick}>
+        Go Back
+      </button>
 
       <div className="product-top-container">
         <div className="image">
