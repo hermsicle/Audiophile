@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ItemsContainer } from "../containers";
+import { ItemsContainer, Cart } from "../containers";
 
-const Navbar = ({ toggleNav, setToggleNav }) => {
+const Navbar = ({ toggleNav, setToggleNav, toggleCart, setToggleCart }) => {
   return (
     <>
       <header className="navbar-container">
@@ -42,12 +42,18 @@ const Navbar = ({ toggleNav, setToggleNav }) => {
           </div>
 
           {/*  Cart  */}
-          <div className="cart-container item">
+          <div
+            className="cart-container item"
+            onClick={() => setToggleCart(!toggleCart)}
+          >
             <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" />
           </div>
         </div>
       </header>
       {toggleNav && <ItemsContainer navbar={true} />}
+      {toggleCart && (
+        <Cart setToggleCart={setToggleCart} toggleCart={toggleCart} />
+      )}
     </>
   );
 };

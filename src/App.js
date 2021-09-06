@@ -1,19 +1,26 @@
 import "./App.scss";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Checkout, Home, Earphones, Headphones, Speakers } from "./pages";
-import { Navbar } from "./components";
+import { Navbar, ScrollToTop } from "./components";
 import { Xx59, Xx99mark1, Xx99mark2 } from "./pages/headphones/";
 import { Zx7, Zx9 } from "./pages/speakers/";
 import { Yx1 } from "./pages/earphones/";
 
 function App() {
   const [toggleNav, setToggleNav] = useState(false);
+  const [toggleCart, setToggleCart] = useState(false);
 
   return (
     <>
       <Router>
-        <Navbar setToggleNav={setToggleNav} toggleNav={toggleNav} />
+        <ScrollToTop />
+        <Navbar
+          setToggleNav={setToggleNav}
+          toggleNav={toggleNav}
+          toggleCart={toggleCart}
+          setToggleCart={setToggleCart}
+        />
 
         <Switch>
           <Route exact path="/" component={Home} />

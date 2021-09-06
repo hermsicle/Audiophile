@@ -25,6 +25,7 @@ body {
 .navbar-container {
   background: $Black;
   padding: 30px 25px;
+  z-index: 10000000;
   .navbar-inner {
     display: flex;
     align-items: center;
@@ -1301,6 +1302,97 @@ body {
           border-bottom-right-radius: $Border-radius;
         }
       }
+    }
+  }
+}
+
+// Cart Modal
+.cart-overlay {
+  background: $Overlay;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  .cart-modal {
+    width: 90%;
+    margin: 100px auto;
+    padding: 2rem;
+    max-width: 500px;
+    background: $White;
+    border-radius: $Border-radius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .flex-row {
+      display: flex;
+      // border: $Border;
+      width: 90%;
+      justify-content: space-between;
+      margin: 2rem 0;
+      .remove-all-button {
+        background: none;
+        border: none;
+        text-decoration: underline;
+        color: $Gray;
+      }
+    }
+    .all-items-container {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+
+      .cart-items-wrapper {
+        width: 100%;
+        // border: $Border;
+        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        .item-box {
+          display: flex;
+          // border: $Border;
+          width: 50%;
+          justify-content: space-between;
+          .price {
+            color: $Gray;
+            letter-spacing: 1px;
+          }
+          .image-icon {
+            height: 50px;
+            width: 50px;
+            border-radius: $Border-radius;
+          }
+        }
+        .quantity {
+          // border: $Border;
+          display: flex;
+          height: 30px;
+          align-self: center;
+          button {
+            width: 30px;
+            background: $Light;
+            border: none;
+          }
+          input {
+            width: 30px;
+            background: $Light;
+            text-align: center;
+            border: none;
+          }
+        }
+      }
+    }
+    .total {
+      .text {
+        text-transform: uppercase;
+        color: $Gray;
+      }
+      .price {
+        font-weight: 800;
+      }
+    }
+    .button-1 {
+      width: 90%;
     }
   }
 }
