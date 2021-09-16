@@ -15,7 +15,7 @@ const Checkout = () => {
         </div>
       </div>
       <FooterContainer />
-      <SuccessModal />
+      {/* <SuccessModal /> */}
     </>
   );
 };

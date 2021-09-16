@@ -1,7 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  increment,
+  decrement,
+  addToCart,
+} from "../store/products/productSlice";
 
 function ProductDetails({
+  payload,
   image,
   imageTablet,
   imageDesktop,
@@ -13,9 +20,23 @@ function ProductDetails({
   inTheBox,
 }) {
   const history = useHistory();
+  const productCount = useSelector((state) => state.products[payload].quantity);
+  const dispatch = useDispatch();
 
   const handleBackClick = () => {
     history.goBack();
+  };
+
+  const handleIncrement = () => {
+    dispatch(increment(payload));
+  };
+
+  const handleDecrement = () => {
+    dispatch(decrement(payload));
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(payload));
   };
 
   return (
@@ -37,11 +58,22 @@ function ProductDetails({
           <h5 className="price"> $ {price} </h5>
           <div className="add-to-cart-container">
             <div className="cart-counter">
-              <button className="decrement"> - </button>
-              <input className="count" type="text" placeholder="1" />
-              <button className="increment"> + </button>
+              <button className="decrement" onClick={handleDecrement}>
+                -
+              </button>
+              <input
+                className="count"
+                type="text"
+                placeholder={productCount}
+                disabled
+              />
+              <button className="increment" onClick={handleIncrement}>
+                +
+              </button>
             </div>
-            <button className="button-1"> Add to cart </button>
+            <button className="button-1" onClick={handleAddToCart}>
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

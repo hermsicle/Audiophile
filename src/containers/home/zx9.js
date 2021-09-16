@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Zx9Container = () => {
   return (
@@ -17,7 +18,9 @@ const Zx9Container = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <button className="button-2 product"> See Product </button>
+          <Link to="/zx9">
+            <button className="button-2 product"> See Product </button>
+          </Link>
         </div>
       </div>
     </div>

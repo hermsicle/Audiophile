@@ -20,6 +20,7 @@ function Zx9(props) {
         features={data.features[0].feature}
         features2={data.features[1].feature}
         inTheBox={data.inTheBox}
+        payload={data.payload}
       />
       <Gallary
         image1={data.gallary.image1}

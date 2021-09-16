@@ -5,13 +5,13 @@ function Cart({ toggleCart, setToggleCart }) {
   const history = useHistory();
   return (
     <div className="cart-overlay">
-      <div className="cart-modal">
+      <div className="cart-modal" onMouseLeave={() => setToggleCart(false)}>
         <div className="flex-row">
-          <h5>Cart (3)</h5>
+          <h5>Cart ()</h5>
           <button className="remove-all-button">Remove All</button>
         </div>
         {/* This will be mapped out from our state of cart */}
-        <div className="all-items-container">
+        {/* <div className="all-items-container">
           <div className="cart-items-wrapper">
             <div className="item-box">
               <img
@@ -49,11 +49,11 @@ function Cart({ toggleCart, setToggleCart }) {
               <button> + </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="total flex-row">
           <p className="text"> Total </p>
-          <p className="price"> $ 888 </p>
+          <p className="price"> $ </p>
         </div>
         <button
           className="button-1"

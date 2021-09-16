@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Yx1Container = () => {
   return (
@@ -6,7 +7,9 @@ const Yx1Container = () => {
       <div className="top-container left"></div>
       <div className="bottom-container right">
         <h1> yz1 earphones </h1>
-        <button className="button-2"> See Product </button>
+        <Link to="/yx1">
+          <button className="button-2"> See Product </button>
+        </Link>
       </div>
     </div>
   );

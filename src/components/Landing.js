@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <div className="landing-container-wrapper">
@@ -11,7 +11,9 @@ const Landing = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="button-1">See Product</button>
+          <Link to="/xx99-mark-two">
+            <button className="button-1">See Product</button>
+          </Link>
         </div>
       </div>
     </div>

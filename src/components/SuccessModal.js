@@ -32,12 +32,12 @@ function SuccessModal(props) {
               <p className="quantity">x1</p>
             </div>
             <div className="other-items">
-              <p> and 2 other item(s) </p>
+              <p> and # other item(s) </p>
             </div>
           </div>
           <div className="right-container">
             <h5 className="title"> Grand Total </h5>
-            <p className="total"> $ Total </p>
+            <p className="total"> $ </p>
           </div>
         </div>
         <button className="button-1" onClick={() => history.push("/")}>

@@ -28,8 +28,8 @@ function App() {
           <Route exact path="/earphones" component={Earphones} />
           <Route exact path="/headphones" component={Headphones} />
           {/* Headphone Routes */}
-          <Route exact path="/xx99-mark-two" component={Xx99mark2} />
-          <Route exact path="/xx99-mark-one" component={Xx99mark1} />
+          <Route exact path="/xx99mark2" component={Xx99mark2} />
+          <Route exact path="/xx99mark1" component={Xx99mark1} />
           <Route exact path="/xx59" component={Xx59} />
           {/* Speaker Routes */}
           <Route exact path="/zx7" component={Zx7} />
