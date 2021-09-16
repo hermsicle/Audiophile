@@ -1327,7 +1327,7 @@ body {
     .flex-row {
       display: flex;
       // border: $Border;
-      width: 90%;
+      width: 100%;
       justify-content: space-between;
       margin: 2rem 0;
       .remove-all-button {
@@ -1337,47 +1337,58 @@ body {
         color: $Gray;
       }
     }
-    .all-items-container {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-
-      .cart-items-wrapper {
-        width: 100%;
+    .all-items-container-wrapper {
+      width: 100%;
+      .all-items-container {
         // border: $Border;
-        margin: 1rem 0;
+        width: 100%;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
-        .item-box {
-          display: flex;
+        flex-direction: column;
+
+        .cart-items-wrapper {
+          width: 100%;
           // border: $Border;
-          width: 50%;
+          margin: 1rem 0;
+          display: flex;
           justify-content: space-between;
-          .price {
-            color: $Gray;
-            letter-spacing: 1px;
+          .item-box {
+            display: flex;
+            // border: $Border;
+            width: 50%;
+            justify-content: space-between;
+            align-items: center;
+            .price {
+              color: $Gray;
+              letter-spacing: 1px;
+            }
+            .image-icon {
+              height: 50px;
+              width: 50px;
+              border-radius: $Border-radius;
+            }
+            .item-name-price {
+              // border: $Border;
+              width: 60%;
+              margin-left: 5px;
+            }
           }
-          .image-icon {
-            height: 50px;
-            width: 50px;
-            border-radius: $Border-radius;
-          }
-        }
-        .quantity {
-          // border: $Border;
-          display: flex;
-          height: 30px;
-          align-self: center;
-          button {
-            width: 30px;
-            background: $Light;
-            border: none;
-          }
-          input {
-            width: 30px;
-            background: $Light;
-            text-align: center;
-            border: none;
+          .quantity {
+            // border: $Border;
+            display: flex;
+            height: 30px;
+            align-self: center;
+            button {
+              width: 30px;
+              background: $Light;
+              border: none;
+            }
+            input {
+              width: 30px;
+              background: $Light;
+              text-align: center;
+              border: none;
+            }
           }
         }
       }
@@ -1392,7 +1403,7 @@ body {
       }
     }
     .button-1 {
-      width: 90%;
+      width: 100%;
     }
   }
 }

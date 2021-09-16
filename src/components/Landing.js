@@ -11,7 +11,7 @@ const Landing = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link to="/xx99-mark-two">
+          <Link to="/xx99mark2">
             <button className="button-1">See Product</button>
           </Link>
         </div>

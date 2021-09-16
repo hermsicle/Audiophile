@@ -6,46 +6,102 @@ export const productSlice = createSlice({
     //Headphones
     xx99mark2: {
       quantity: 1,
-      price: 2999,
+      // price: 2999,
+      price: 10,
       cart: false,
     },
     xx99mark1: {
       quantity: 1,
-      price: 1750,
+      // price: 1750,
+      price: 10,
       cart: false,
     },
     xx59: {
       quantity: 1,
-      price: 899,
+      // price: 899,
+      price: 10,
       cart: false,
     },
     //Speakers
     zx9: {
       quantity: 1,
-      price: 4500,
+      // price: 4500,
+      price: 10,
       cart: false,
     },
     zx7: {
       quantity: 1,
-      price: 3500,
+      // price: 3500,
+      price: 10,
       cart: false,
     },
     //Earphones
     yx1: {
       quantity: 1,
-      price: 599,
+      // price: 599,
+      price: 10,
       cart: false,
+    },
+    // Total
+    total: {
+      current: 0,
     },
   },
   reducers: {
     increment: (state, action) => {
       state[action.payload].quantity += 1;
+      // Everytime we increment we want to increment total
+      const xx99mark2 =
+        state.xx99mark2.cart === true &&
+        state.xx99mark2.quantity * state.xx99mark2.price;
+      const xx99mark1 =
+        state.xx99mark1.cart === true &&
+        state.xx99mark1.quantity * state.xx99mark1.price;
+      const xx59 =
+        state.xx59.cart === true && state.xx59.quantity * state.xx59.price;
+      const zx9 =
+        state.zx9.cart === true && state.zx9.quantity * state.zx9.price;
+      const zx7 =
+        state.zx7.cart === true && state.zx7.quantity * state.zx7.price;
+      const yx1 =
+        state.yx1.cart === true && state.yx1.quantity * state.yx1.price;
+
+      state.total.current = xx99mark2 + xx99mark1 + xx59 + zx9 + zx7 + yx1;
     },
     decrement: (state, action) => {
       state[action.payload].quantity -= 1;
+
+      state.total.current -= state[action.payload].price;
+
+      // Check if the current = 0
+      if (state.total.current <= 0) {
+        state.total.current = 0;
+        state[action.payload].cart = false;
+      }
+
+      // If the items quantity is less than 1, set back to 1. Prevent negative numbers
+      if (state[action.payload].quantity <= 0) {
+        state[action.payload].quantity = 0;
+      }
     },
     addToCart: (state, action) => {
       state[action.payload].cart = true;
+      const xx99mark2 =
+        state.xx99mark2.cart === true &&
+        state.xx99mark2.quantity * state.xx99mark2.price;
+      const xx99mark1 =
+        state.xx99mark1.cart === true &&
+        state.xx99mark1.quantity * state.xx99mark1.price;
+      const xx59 =
+        state.xx59.cart === true && state.xx59.quantity * state.xx59.price;
+      const zx9 =
+        state.zx9.cart === true && state.zx9.quantity * state.zx9.price;
+      const zx7 =
+        state.zx7.cart === true && state.zx7.quantity * state.zx7.price;
+      const yx1 =
+        state.yx1.cart === true && state.yx1.quantity * state.yx1.price;
+
+      state.total.current = xx99mark2 + xx99mark1 + xx59 + zx9 + zx7 + yx1;
     },
   },
 });
