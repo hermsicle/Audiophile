@@ -2,9 +2,9 @@ import React from "react";
 import RightArrowIcon from "./../assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 
-const Item = ({ image, item }) => {
+const Item = ({ image, item, setToggleNav }) => {
   return (
-    <div className="item">
+    <div className="item" onClick={() => setToggleNav(false)}>
       <img className="item-image" src={image} alt="" />
       <h4>{item}</h4>
       <Link to={item}>

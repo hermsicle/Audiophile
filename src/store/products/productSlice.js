@@ -45,6 +45,7 @@ export const productSlice = createSlice({
     // Total
     total: {
       current: 0,
+      items: 0,
     },
   },
   reducers: {

@@ -234,7 +234,7 @@ body {
   .items-container.nav {
     position: absolute;
     background: $White;
-    transition: $Transition;
+    box-shadow: 1px 2px 10px black;
     @media (min-width: $Desktop) {
       display: none;
     }
@@ -1314,96 +1314,101 @@ body {
   height: 100%;
   width: 100%;
   z-index: 5;
-  .cart-modal {
-    width: 90%;
-    margin: 100px auto;
-    padding: 2rem;
-    max-width: 500px;
-    background: $White;
-    border-radius: $Border-radius;
+}
+.cart-modal {
+  width: 90%;
+  margin: 100px auto;
+  padding: 2rem;
+  max-width: 500px;
+  background: $White;
+  border-radius: $Border-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  .flex-row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    .flex-row {
-      display: flex;
+    // border: $Border;
+    width: 100%;
+    justify-content: space-between;
+    margin: 2rem 0;
+    .remove-all-button {
+      background: none;
+      border: none;
+      text-decoration: underline;
+      color: $Gray;
+    }
+  }
+  .all-items-container-wrapper {
+    width: 100%;
+    .all-items-container {
       // border: $Border;
       width: 100%;
-      justify-content: space-between;
-      margin: 2rem 0;
-      .remove-all-button {
-        background: none;
-        border: none;
-        text-decoration: underline;
-        color: $Gray;
-      }
-    }
-    .all-items-container-wrapper {
-      width: 100%;
-      .all-items-container {
-        // border: $Border;
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
 
-        .cart-items-wrapper {
-          width: 100%;
-          // border: $Border;
-          margin: 1rem 0;
+      .cart-items-wrapper {
+        width: 100%;
+        // border: $Border;
+        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        .item-box {
           display: flex;
+          // border: $Border;
+          width: 50%;
           justify-content: space-between;
-          .item-box {
-            display: flex;
-            // border: $Border;
-            width: 50%;
-            justify-content: space-between;
-            align-items: center;
-            .price {
-              color: $Gray;
-              letter-spacing: 1px;
-            }
-            .image-icon {
-              height: 50px;
-              width: 50px;
-              border-radius: $Border-radius;
-            }
-            .item-name-price {
-              // border: $Border;
-              width: 60%;
-              margin-left: 5px;
-            }
+          align-items: center;
+          .price {
+            color: $Gray;
+            letter-spacing: 1px;
           }
-          .quantity {
+          .image-icon {
+            height: 50px;
+            width: 50px;
+            border-radius: $Border-radius;
+          }
+          .item-name-price {
             // border: $Border;
-            display: flex;
-            height: 30px;
-            align-self: center;
-            button {
-              width: 30px;
-              background: $Light;
-              border: none;
-            }
-            input {
-              width: 30px;
-              background: $Light;
-              text-align: center;
-              border: none;
-            }
+            width: 60%;
+            margin-left: 5px;
+          }
+        }
+        .quantity {
+          // border: $Border;
+          display: flex;
+          height: 30px;
+          align-self: center;
+          button {
+            width: 30px;
+            background: $Light;
+            border: none;
+          }
+          input {
+            width: 30px;
+            background: $Light;
+            text-align: center;
+            border: none;
           }
         }
       }
     }
-    .total {
-      .text {
-        text-transform: uppercase;
-        color: $Gray;
-      }
-      .price {
-        font-weight: 800;
-      }
+  }
+  .total {
+    .text {
+      text-transform: uppercase;
+      color: $Gray;
     }
-    .button-1 {
-      width: 100%;
+    .price {
+      font-weight: 800;
     }
+  }
+  .button-1 {
+    width: 100%;
   }
 }

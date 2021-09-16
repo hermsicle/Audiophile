@@ -21,8 +21,10 @@ function Cart({ toggleCart, setToggleCart }) {
   console.log(xx99Mark2);
 
   return (
-    <div className="cart-overlay">
-      <div className="cart-modal" onMouseLeave={() => setToggleCart(false)}>
+    <>
+      <div className="cart-overlay" onClick={() => setToggleCart(false)}></div>
+
+      <div className="cart-modal">
         {
           // If no cart Items prompt user to add items to cart, else display cart
         }
@@ -63,7 +65,7 @@ function Cart({ toggleCart, setToggleCart }) {
           </button>
         </>
       </div>
-    </div>
+    </>
   );
 }
 

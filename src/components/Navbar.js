@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ItemsContainer, Cart } from "../containers";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ toggleNav, setToggleNav, toggleCart, setToggleCart }) => {
+  // Check to see if there are any items in cart
+  const items = useSelector((state) => state.products.total.current);
+
   return (
     <>
       <header className="navbar-container">
@@ -36,21 +40,27 @@ const Navbar = ({ toggleNav, setToggleNav, toggleCart, setToggleCart }) => {
             <Link to="/headphones">
               <h5> Headphones</h5>
             </Link>
-            <Link to="/checkout">
-              <h5> Checkout</h5>
-            </Link>
+            {/* If no items in cart, don't show */}
+            {items !== 0 && (
+              <Link to="/checkout">
+                <h5> Checkout</h5>
+              </Link>
+            )}
           </div>
 
           {/*  Cart  */}
           <div
             className="cart-container item"
             onClick={() => setToggleCart(!toggleCart)}
+            // onMouseEnter={() => setToggleCart(true)}
           >
             <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" />
           </div>
         </div>
       </header>
-      {toggleNav && <ItemsContainer navbar={true} />}
+      {toggleNav && (
+        <ItemsContainer navbar={true} setToggleNav={setToggleNav} />
+      )}
       {toggleCart && (
         <Cart setToggleCart={setToggleCart} toggleCart={toggleCart} />
       )}
