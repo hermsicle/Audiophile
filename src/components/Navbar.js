@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const Navbar = ({ toggleNav, setToggleNav, toggleCart, setToggleCart }) => {
   // Check to see if there are any items in cart
   const items = useSelector((state) => state.products.total.current);
+  const cartItemTotal = useSelector((state) => state.products.total.items);
 
   return (
     <>
@@ -55,6 +56,9 @@ const Navbar = ({ toggleNav, setToggleNav, toggleCart, setToggleCart }) => {
             // onMouseEnter={() => setToggleCart(true)}
           >
             <img src="./assets/shared/desktop/icon-cart.svg" alt="cart" />
+            <span style={{ color: "white" }}>
+              {cartItemTotal >= 1 && cartItemTotal}
+            </span>
           </div>
         </div>
       </header>

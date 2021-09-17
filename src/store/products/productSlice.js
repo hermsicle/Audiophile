@@ -53,19 +53,15 @@ export const productSlice = createSlice({
       state[action.payload].quantity += 1;
       // Everytime we increment we want to increment total
       const xx99mark2 =
-        state.xx99mark2.cart === true &&
+        state.xx99mark2.cart &&
         state.xx99mark2.quantity * state.xx99mark2.price;
       const xx99mark1 =
-        state.xx99mark1.cart === true &&
+        state.xx99mark1.cart &&
         state.xx99mark1.quantity * state.xx99mark1.price;
-      const xx59 =
-        state.xx59.cart === true && state.xx59.quantity * state.xx59.price;
-      const zx9 =
-        state.zx9.cart === true && state.zx9.quantity * state.zx9.price;
-      const zx7 =
-        state.zx7.cart === true && state.zx7.quantity * state.zx7.price;
-      const yx1 =
-        state.yx1.cart === true && state.yx1.quantity * state.yx1.price;
+      const xx59 = state.xx59.cart && state.xx59.quantity * state.xx59.price;
+      const zx9 = state.zx9.cart && state.zx9.quantity * state.zx9.price;
+      const zx7 = state.zx7.cart && state.zx7.quantity * state.zx7.price;
+      const yx1 = state.yx1.cart && state.yx1.quantity * state.yx1.price;
 
       state.total.current = xx99mark2 + xx99mark1 + xx59 + zx9 + zx7 + yx1;
     },
@@ -86,27 +82,39 @@ export const productSlice = createSlice({
       }
     },
     addToCart: (state, action) => {
-      state[action.payload].cart = true;
+      // Check to see if the item is NOT in the cart
+      if (!state[action.payload].cart) {
+        state[action.payload].cart = true;
+        state.total.items += 1;
+      }
       const xx99mark2 =
-        state.xx99mark2.cart === true &&
+        state.xx99mark2.cart &&
         state.xx99mark2.quantity * state.xx99mark2.price;
       const xx99mark1 =
-        state.xx99mark1.cart === true &&
+        state.xx99mark1.cart &&
         state.xx99mark1.quantity * state.xx99mark1.price;
-      const xx59 =
-        state.xx59.cart === true && state.xx59.quantity * state.xx59.price;
-      const zx9 =
-        state.zx9.cart === true && state.zx9.quantity * state.zx9.price;
-      const zx7 =
-        state.zx7.cart === true && state.zx7.quantity * state.zx7.price;
-      const yx1 =
-        state.yx1.cart === true && state.yx1.quantity * state.yx1.price;
+      const xx59 = state.xx59.cart && state.xx59.quantity * state.xx59.price;
+      const zx9 = state.zx9.cart && state.zx9.quantity * state.zx9.price;
+      const zx7 = state.zx7.cart && state.zx7.quantity * state.zx7.price;
+      const yx1 = state.yx1.cart && state.yx1.quantity * state.yx1.price;
 
       state.total.current = xx99mark2 + xx99mark1 + xx59 + zx9 + zx7 + yx1;
+    },
+    removeAll: (state) => {
+      state.xx99mark2.cart = false;
+      state.xx99mark1.cart = false;
+      state.xx59.cart = false;
+      state.zx9.cart = false;
+      state.zx7.cart = false;
+      state.yx1.cart = false;
+
+      state.total.current = 0;
+      state.total.items = 0;
     },
   },
 });
 
-export const { increment, decrement, addToCart } = productSlice.actions;
+export const { increment, decrement, addToCart, removeAll, getTotalItems } =
+  productSlice.actions;
 
 export default productSlice.reducer;
