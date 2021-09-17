@@ -2,7 +2,7 @@ import React from "react";
 
 function CheckoutForm(props) {
   return (
-    <div className="checkout-form">
+    <form className="checkout-form">
       <h2>Checkout</h2>
       <div className="billing-details">
         <h5 className="title">Billing details</h5>
@@ -74,7 +74,7 @@ function CheckoutForm(props) {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 

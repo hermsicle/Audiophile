@@ -1,8 +1,16 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { CartItem } from "../components/";
+import { removeAll } from "../store/products/productSlice";
+import { useDispatch } from "react-redux";
 
 function SuccessModal(props) {
   const history = useHistory();
+  const allCartItems = useSelector((state) => state.products);
+  const grandTotal = useSelector((state) => state.products.total.grandTotal);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="success-modal-overlay">
@@ -19,7 +27,24 @@ function SuccessModal(props) {
         </p>
         <div className="items-container">
           <div className="left-container">
-            <div className="items-info">
+            {Object.keys(allCartItems).map((item, i) => {
+              const isInCart = allCartItems[item].cart;
+              if (isInCart === true) {
+                return (
+                  <div key={i} className="all-items-container-wrapper">
+                    <CartItem
+                      item={item}
+                      price={allCartItems[item].price}
+                      quantity={allCartItems[item].quantity}
+                      summary={true}
+                    />
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
+            {/* <div className="items-info">
               <img
                 src="./assets/cart/image-xx59-headphones.jpg"
                 alt="img"
@@ -33,14 +58,20 @@ function SuccessModal(props) {
             </div>
             <div className="other-items">
               <p> and # other item(s) </p>
-            </div>
+            </div> */}
           </div>
           <div className="right-container">
             <h5 className="title"> Grand Total </h5>
-            <p className="total"> $ </p>
+            <p className="total"> ${grandTotal} </p>
           </div>
         </div>
-        <button className="button-1" onClick={() => history.push("/")}>
+        <button
+          className="button-1"
+          onClick={() => {
+            dispatch(removeAll());
+            history.push("/");
+          }}
+        >
           Back to home
         </button>
       </div>

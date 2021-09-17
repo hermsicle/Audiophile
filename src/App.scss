@@ -1153,8 +1153,53 @@ body {
       background: $White;
       padding: 1rem;
       .cart-items {
-        border: $Border;
+        // border: $Border;
         height: 200px;
+        .all-items-container-wrapper {
+          width: 100%;
+          .all-items-container {
+            // border: $Border;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+
+            .cart-items-wrapper {
+              width: 100%;
+              // border: $Border;
+              margin: 1rem 0;
+              display: flex;
+              justify-content: space-between;
+              .item-box {
+                display: flex;
+                // border: $Border;
+                width: 50%;
+                justify-content: space-between;
+                align-items: center;
+                .price {
+                  color: $Gray;
+                  letter-spacing: 1px;
+                }
+                .image-icon {
+                  height: 50px;
+                  width: 50px;
+                  border-radius: $Border-radius;
+                }
+                .item-name-price {
+                  // border: $Border;
+                  width: 60%;
+                  margin-left: 5px;
+                }
+              }
+              .quantity-summary {
+                // border: $Border;
+                display: flex;
+                height: 30px;
+                align-self: center;
+              }
+            }
+          }
+        }
       }
       .box {
         display: flex;
@@ -1211,7 +1256,7 @@ body {
   display: grid;
   place-content: center;
   .success-modal {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     background: $White;
     border-radius: $Border-radius;
@@ -1234,6 +1279,55 @@ body {
       .left-container {
         // border: $Border;
         background: $Light;
+
+        .all-items-container-wrapper {
+          width: 100%;
+          // border: $Border;
+          .all-items-container {
+            // border: $Border;
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .cart-items-wrapper {
+              width: 100%;
+              // border: $Border;
+              margin: 1rem 0;
+              display: flex;
+              justify-content: space-between;
+              .item-box {
+                display: flex;
+                // border: $Border;
+                width: 50%;
+                justify-content: space-between;
+                align-items: center;
+                .price {
+                  color: $Gray;
+                  letter-spacing: 1px;
+                }
+                .image-icon {
+                  height: 50px;
+                  width: 50px;
+                  border-radius: $Border-radius;
+                }
+                .item-name-price {
+                  // border: $Border;
+                  width: 60%;
+                  margin-left: 5px;
+                }
+              }
+              .quantity-summary {
+                // border: $Border;
+                display: flex;
+                height: 30px;
+                align-self: center;
+              }
+            }
+          }
+        }
+
         .items-info {
           display: flex;
           align-items: center;
@@ -1285,13 +1379,24 @@ body {
     }
 
     @media (min-width: $Tablet) {
-      width: 100%;
+      // width: 100%;
+      width: 600px;
       .items-container {
         display: flex;
+        // border: $Border;
+        padding: 0;
         .left-container {
           height: 100%;
           border-top-left-radius: $Border-radius;
           border-bottom-left-radius: $Border-radius;
+          margin: 0;
+          width: 100%;
+          min-height: 125px;
+
+          .all-items-container-wrapper {
+            padding-right: 10px;
+          }
+
           .items-info {
             justify-content: space-evenly;
             padding-right: 2rem;
@@ -1300,6 +1405,8 @@ body {
         .right-container {
           border-top-right-radius: $Border-radius;
           border-bottom-right-radius: $Border-radius;
+          margin: 0;
+          width: 100%;
         }
       }
     }

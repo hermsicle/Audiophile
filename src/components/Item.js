@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ image, item, setToggleNav }) => {
   return (
-    <div className="item" onClick={() => setToggleNav(false)}>
+    <div className="item">
       <img className="item-image" src={image} alt="" />
       <h4>{item}</h4>
       <Link to={item}>

@@ -6,46 +6,41 @@ export const productSlice = createSlice({
     //Headphones
     xx99mark2: {
       quantity: 1,
-      // price: 2999,
-      price: 10,
+      price: 2999,
       cart: false,
     },
     xx99mark1: {
       quantity: 1,
-      // price: 1750,
-      price: 10,
+      price: 1750,
       cart: false,
     },
     xx59: {
       quantity: 1,
-      // price: 899,
-      price: 10,
+      price: 899,
       cart: false,
     },
     //Speakers
     zx9: {
       quantity: 1,
-      // price: 4500,
-      price: 10,
+      price: 4500,
       cart: false,
     },
     zx7: {
       quantity: 1,
-      // price: 3500,
-      price: 10,
+      price: 3500,
       cart: false,
     },
     //Earphones
     yx1: {
       quantity: 1,
-      // price: 599,
-      price: 10,
+      price: 599,
       cart: false,
     },
     // Total
     total: {
       current: 0,
       items: 0,
+      grandTotal: 0,
     },
   },
   reducers: {
@@ -111,10 +106,21 @@ export const productSlice = createSlice({
       state.total.current = 0;
       state.total.items = 0;
     },
+    grandTotal: (state) => {
+      const TAX = 50;
+      state.total.grandTotal =
+        state.total.current + TAX + Math.floor(state.total.current * 0.2);
+    },
   },
 });
 
-export const { increment, decrement, addToCart, removeAll, getTotalItems } =
-  productSlice.actions;
+export const {
+  increment,
+  decrement,
+  addToCart,
+  removeAll,
+  getTotalItems,
+  grandTotal,
+} = productSlice.actions;
 
 export default productSlice.reducer;

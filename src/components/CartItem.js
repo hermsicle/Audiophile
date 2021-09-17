@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../store/products/productSlice";
 
-const CartItem = ({ item, price, quantity }) => {
+const CartItem = ({ item, price, quantity, summary }) => {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
@@ -27,11 +27,17 @@ const CartItem = ({ item, price, quantity }) => {
             <p className="price"> $ {price} </p>
           </div>
         </div>
-        <div className="quantity">
-          <button onClick={handleDecrement}> - </button>
-          <input type="text" placeholder={quantity} disabled />
-          <button onClick={handleIncrement}> + </button>
-        </div>
+        {summary ? (
+          <div className="quantity-summary">
+            <p> x {quantity}</p>
+          </div>
+        ) : (
+          <div className="quantity">
+            <button onClick={handleDecrement}> - </button>
+            <input type="text" placeholder={quantity} disabled />
+            <button onClick={handleIncrement}> + </button>
+          </div>
+        )}
       </div>
     </div>
   );

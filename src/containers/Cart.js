@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { CartItem } from "../components/";
-import { removeAll } from "../store/products/productSlice";
+import { removeAll, grandTotal } from "../store/products/productSlice";
 
 function Cart({ toggleCart, setToggleCart }) {
   const history = useHistory();
@@ -66,6 +66,7 @@ function Cart({ toggleCart, setToggleCart }) {
                 onClick={() => {
                   history.push("/checkout");
                   setToggleCart(!toggleCart);
+                  dispatch(grandTotal());
                 }}
               >
                 Check Out
