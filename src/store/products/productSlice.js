@@ -106,11 +106,11 @@ export const productSlice = createSlice({
       state.total.current = 0;
       state.total.items = 0;
     },
-    grandTotal: (state) => {
-      const TAX = 50;
-      state.total.grandTotal =
-        state.total.current + TAX + Math.floor(state.total.current * 0.2);
-    },
+    // grandTotal: (state) => {
+    //   const TAX = 50;
+    //   state.total.grandTotal =
+    //     state.total.current + TAX + Math.floor(state.total.current * 0.2);
+    // },
   },
 });
 

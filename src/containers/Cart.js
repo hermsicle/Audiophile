@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { CartItem } from "../components/";
-import { removeAll, grandTotal } from "../store/products/productSlice";
+import { removeAll } from "../store/products/productSlice";
 
 function Cart({ toggleCart, setToggleCart }) {
   const history = useHistory();
@@ -12,12 +12,6 @@ function Cart({ toggleCart, setToggleCart }) {
   const allCartItems = useSelector((state) => {
     return state.products;
   });
-
-  // Get total cart items
-  const totalCartItems = useSelector((state) => {
-    return state.products.total.items;
-  });
-  console.log(totalCartItems);
 
   const cartTotal = useSelector((state) => state.products.total.current);
   const totalItems = useSelector((state) => state.products.total.items);
@@ -66,7 +60,6 @@ function Cart({ toggleCart, setToggleCart }) {
                 onClick={() => {
                   history.push("/checkout");
                   setToggleCart(!toggleCart);
-                  dispatch(grandTotal());
                 }}
               >
                 Check Out

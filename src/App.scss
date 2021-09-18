@@ -1042,6 +1042,10 @@ body {
         h2 {
           margin: 1.5rem 0px;
         }
+        .error {
+          color: $Primary;
+          font-weight: 600;
+        }
         .billing-details,
         .shipping-info,
         .payment-details {
@@ -1130,6 +1134,7 @@ body {
                 width: 48%;
                 .input-box.payment {
                   width: 100%;
+                  cursor: pointer;
                 }
               }
               .input-box {
