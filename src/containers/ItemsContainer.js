@@ -6,7 +6,7 @@ const ItemsContainer = ({ navbar, setToggleNav }) => {
     <div className={navbar && "items-wrapper-overlay"}>
       <div
         className={navbar ? "items-container nav" : "items-container"}
-        // onMouseLeave={() => setToggleNav(false)}
+        onMouseLeave={() => setToggleNav(false)}
       >
         <Item
           image="./assets/shared/mobile/image-xx99-mark-one-headphones.svg"
